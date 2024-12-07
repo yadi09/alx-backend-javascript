@@ -6,10 +6,7 @@ const countStudents = (dataPath) => new Promise((resolve, reject) => {
       reject(new Error('Cannot load the database'));
     }
     if (data) {
-      const fileLines = data
-        .toString('utf-8')
-        .trim()
-        .split('\n');
+      const fileLines = data.toString('utf-8').trim().split('\n');
       const studentGroups = {};
       const dbFieldNames = fileLines[0].split(',');
       const studentPropNames = dbFieldNames
